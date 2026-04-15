@@ -1,0 +1,64 @@
+.todo {
+    /* width: 90%;
+    min-width: 400px; */
+    width: max(90%, 400px);   /* 보통: 90%, 최소: 400px */
+    background-color: #f9f9f9;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);   /* 0: 가로, 2px: 세로, 4px: blur */
+}
+.todo__title {
+    font-size: 2rem;
+}
+.todo__form {
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+}
+.todo__input {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    flex: 1;
+}
+.todo__button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #fff;
+}
+.todo__button--add {
+    background-color: #4984e4;
+}
+.todo__item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.todo__check {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #999;    /* 체크했을 때 배경색, 눈에 안 띄게 */
+}
+.todo__label {
+    flex: 1;
+    margin-left: 10px; 
+}
+.todo__button--edit,
+.todo__button--delete {
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+.todo__item--complete .todo__label {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* A > B: A 바로 아래 자식 B
+A B: A 언젠가 자손 B */
