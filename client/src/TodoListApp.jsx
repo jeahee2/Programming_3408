@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './todolist.css'
 // import TodoItemEmpty from './component/TodoItemEmpty.jsx';
 // import Button from './component/Button.jsx';
@@ -6,13 +7,36 @@ import TodoHeader from './component/TodoHeader.jsx';
 import TodoAdder from './component/TodoAdder.jsx';
 // import TodoItem from './component/TodoItem.jsx'
 import TodoList from './component/TodoList.jsx'
+
+class Todo{
+  constructor(text){
+    this.id=Date.now(); //id;고유의 값. new Date().getTime()
+    this.text=text;     //할 일 내용
+    this.isCompleted = false; //완료 여부: 미완
+  }
+}
+
 function TodoListApp() {
-  return (
-    <div className="todo">
+  const [todos, setTodos] = useState([]) //할 일 목록 저장 state, 기본값
+  function addTodo(text){
+    setTodos((todos)=>[
+    //이전 todos 가져오기
+    //하나씩 꺼내서 새로운 리스트 만들기
+    ...todos,
+    //뒤에 new Todo 만들어서 추가하자
+    new Todo(text)
+    ]);
+  
+  }
+
+  //function addTodo(text) {setTodos((todos)=>[...todos, new Todo(text)])};
+
+    return(
+      <div className ="todo">
         <TodoHeader/>
-        <TodoAdder/>
-        <TodoList/>
-    </div>
-  )
+        <TodoAdder addTodo={addTodo} />
+        <TodoList />
+      </div>
+    );
 }
 export default TodoListApp;

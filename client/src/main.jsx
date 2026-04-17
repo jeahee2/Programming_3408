@@ -6,6 +6,6 @@ import TodoListApp from './TodoListApp.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <TodoListApp />
+    <TodoListApp/>
   </StrictMode>,
 )
