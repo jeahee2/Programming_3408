@@ -34,15 +34,21 @@ function TodoListApp() {
       // todos에서 하나씩 꺼내서 todo의 id가 id와 같으면, !이전 isCompleted
       setTodos((todos)=>
         todos.map((todo)=>
-          todo.id===id?{...todo, isCompleted:!todo.isCompleted}:todo
+          todo.id===id?{...todo, isCompleted: !todo.isCompleted}:todo
         )
+      )
+    }
+    function deleteTodo(id){
+      // todos 하나씩 꺼내어 todo의 id가 다른 todo만 남기자
+      setTodos((todos)=>
+        todos.filter((todo)=> todo.id !== id)
       )
     }
     return(
       <div className ="todo">
         <TodoHeader/>
         <TodoAdder addTodo={addTodo} />
-        <TodoList todos={todos} toggleTodo={toggletTodo}/>
+        <TodoList todos={todos} toggleTodo={toggletTodo} deleteTOdo={deleteTodo}/>
         </div>
     );
 }
