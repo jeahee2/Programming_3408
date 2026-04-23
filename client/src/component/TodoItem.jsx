@@ -5,8 +5,7 @@ export default function TodoItem({todo, toggleTodo, deleteTodo}){
     return(
         //todo.iscompleted가 참이면 "todo__item--complete" 아니면 ""
         <>
-         <li className={`todo__item${todo.isComplete?"todo__item--complete":""}`}>
-            <Checkbox 
+<li className={`todo__item${todo.isCompleted ? " todo__item--complete" : ""}`}>            <Checkbox 
                 id={todo.id}
                 onChange={()=>toggleTodo(todo.id)}
             >{todo.text}</Checkbox>

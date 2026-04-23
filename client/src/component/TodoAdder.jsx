@@ -18,7 +18,8 @@ export default function TodoAdder({addTodo}){
     return(
         <>
             <form className="todo__form" onSubmit={handleSubmit}>
-                <input type="text" 
+                <input 
+                type="text" 
                 className="todo__input" 
                 placeholder='할 일을 입력하세요.'
                 value={inputTodo}

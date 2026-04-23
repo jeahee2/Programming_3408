@@ -48,8 +48,8 @@ function TodoListApp() {
       <div className ="todo">
         <TodoHeader/>
         <TodoAdder addTodo={addTodo} />
-        <TodoList todos={todos} toggleTodo={toggletTodo} deleteTOdo={deleteTodo}/>
+        <TodoList todos={todos} toggleTodo={toggletTodo} deleteTodo={deleteTodo}/>
         </div>
-    );
+    )
 }
 export default TodoListApp;
