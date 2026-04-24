@@ -14,6 +14,7 @@ export default function TodoItem({todo, toggleTodo, deleteTodo}){
                 className="todo__button todo__button--delete"
                 onClick = {()=> deleteTodo(todo.id)}
             >❌</Button>
+            
         </li>
         </>
     )
