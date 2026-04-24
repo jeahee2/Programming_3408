@@ -44,6 +44,14 @@ function TodoListApp() {
         todos.filter((todo)=> todo.id !== id)
       )
     }
+    function editTodo(id, newText){
+      // todos에서 하나씩 꺼내어 todo.id가 같으면 text를 newText로 대입하자
+      setTodos((todos)=>
+        todos.map((todo)=>
+          todo.id===id? {...todo, text: newText} : todo
+        )
+      )
+    }
     return(
       <div className ="todo">
         <TodoHeader/>
