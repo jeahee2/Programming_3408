@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './todolist.css'
 // import TodoItemEmpty from './component/TodoItemEmpty.jsx';
 // import Button from './component/Button.jsx';
@@ -15,9 +15,22 @@ class Todo{
     this.isCompleted = false; //완료 여부: 미완
   }
 }
+ const TODOS_STORAGE_KEY = "todos";
 
 function TodoListApp() {
-  const [todos, setTodos] = useState([]) //할 일 목록 저장 state, 기본값
+  function initTodos(){
+    const savedTodos = localStorage.getItem(TODOS_STORAGE_KEY);
+
+    return savedTodos ? JSON.parse(savedTodos) : []; 
+  }
+  const [todos, setTodos] = useState(initTodos) //할 일 목록 저장 state, 기본값
+  
+  // todos변경될때, 저장하자. useEggect(명령어, [변할값])
+  useEffect(()=>{
+    // LocalStorage에 todos 저장하자
+    localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
+
   function addTodo(text){
     setTodos((todos)=>[
     //이전 todos 가져오기
@@ -56,7 +69,7 @@ function TodoListApp() {
       <div className ="todo">
         <TodoHeader/>
         <TodoAdder addTodo={addTodo} />
-        <TodoList todos={todos} toggleTodo={toggletTodo} deleteTodo={deleteTodo}/>
+        <TodoList todos={todos} toggleTodo={toggletTodo} deleteTodo={deleteTodo} editTodo={editTodo}/>
         </div>
     )
 }
