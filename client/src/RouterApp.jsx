@@ -1,9 +1,11 @@
-import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
+import {BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom"
 import CounterApp from "./CounterApp"
 import TodoListApp from "./TodoListApp";
 
 
 function LinkButtonPageApp(){
+    const navigate = useNavigate();
+
     return(
         <div>
             <h1>App 목록</h1>
@@ -13,6 +15,12 @@ function LinkButtonPageApp(){
                 </li>
                 <li>
                     <Link to="/todolistapp">TodoListApp</Link>
+                </li>
+                <li>
+                    <button onClick={()=>navigate("/counterapp")}>CounterApp</button>
+                </li>
+                <li>
+                    <button onClick={()=>navigate("/todolistapp")}>TodoListApp</button>
                 </li>
             </ul>
         </div>
