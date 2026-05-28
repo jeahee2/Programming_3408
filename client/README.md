@@ -34,3 +34,18 @@ npm create vite@latest .
 - `{조건식 && 참}` , `{!조건식 && 거짓}`
 - onkayDown
 - LocalStorage, `useEffect(명령아, [변할값])`
+- `style={{}}`
+- HomeApp: State를 이용해서 다른 컴포넌트 표시하자
+- `npm install react-router-dom`
+- ```javasropt
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={} />
+        <Routes>
+    <BrowserRouter>
+  ```
+
+````javascript
+    <Link to="/"><Link>
+    ```
+````
