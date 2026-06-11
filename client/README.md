@@ -50,3 +50,5 @@ npm create vite@latest .
     ```
 - `useNavigate()`
 ````
+
+- 3408 이제희 1-1 날짜 표시? ★ Date, 컴포넌트 렌더링
